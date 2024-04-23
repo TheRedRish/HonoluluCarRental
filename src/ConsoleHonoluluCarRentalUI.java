@@ -232,6 +232,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
     @Override
     public void displayDeleteCar() {
+        //TODO maybe add some check for if the car exists
         System.out.println("<------Update car------>");
         String registrationNumberForCar = Utils.getStringInput("Enter registration number of car: ");
         honoluluCarRentalService.deleteCarByRegistrationNumber(registrationNumberForCar);

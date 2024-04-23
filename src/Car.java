@@ -178,6 +178,25 @@ public class Car {
         return id;
     }
 
+    public String getConsoleSaveString(String argSeparator){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id.toString()).append(argSeparator);
+        stringBuilder.append(carBrand.toString()).append(argSeparator);
+        stringBuilder.append(model).append(argSeparator);
+        stringBuilder.append(fuelType.toString()).append(argSeparator);
+        stringBuilder.append(firstRegistrationDate.toString()).append(argSeparator);
+        stringBuilder.append(odometer).append(argSeparator);
+        stringBuilder.append(motorSize).append(argSeparator);
+        stringBuilder.append(gearType.toString()).append(argSeparator);
+        stringBuilder.append(hasAircondition).append(argSeparator);
+        stringBuilder.append(hasCruiseControl).append(argSeparator);
+        stringBuilder.append(seatType).append(argSeparator);
+        stringBuilder.append(seatAmount).append(argSeparator);
+        stringBuilder.append(horsePower).append(argSeparator);
+        stringBuilder.append(registrationNumber);
+        return stringBuilder.toString();
+    }
+
     public String toString(){
         //TODO add toString
         return "";
