@@ -1,0 +1,30 @@
+package enums;
+
+public enum CarBrand {
+    TOYOTA,
+    HONDA,
+    FORD,
+    BMW,
+    MERCEDES,
+    AUDI,
+    VOLKSWAGEN,
+    CHEVROLET,
+    HYUNDAI,
+    KIA,
+    NISSAN,
+    SUBARU,
+    MAZDA,
+    TESLA,
+    VOLVO,
+    LEXUS,
+    JAGUAR,
+    LAND_ROVER,
+    PORSCHE,
+    FERRARI,
+    LAMBORGHINI,
+    ASTON_MARTIN,
+    BENTLEY,
+    MCLAREN,
+    ROLLS_ROYCE,
+    BUGATTI
+}
