@@ -1,4 +1,7 @@
+import java.util.UUID;
+
 public class Renter {
+    private UUID id;
     private String name;
     private String address;
     private String zipCode;
@@ -8,6 +11,18 @@ public class Renter {
     private String email;
 
     public Renter(String name, String address, String zipCode, String city, String phoneNumber, String phone, String email) {
+        this.id = UUID.randomUUID();
+        this.name = name;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public Renter(UUID id, String name, String address, String zipCode, String city, String phoneNumber, String phone, String email) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.zipCode = zipCode;
@@ -71,5 +86,9 @@ public class Renter {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public UUID getId() {
+        return id;
     }
 }

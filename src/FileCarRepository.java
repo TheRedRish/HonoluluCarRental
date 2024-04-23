@@ -1,3 +1,7 @@
+import enums.CarBrand;
+import enums.FuelType;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -33,7 +37,7 @@ public class FileCarRepository implements ICarRepository {
     }
 
     @Override
-    public List<Car> getCarsByRegistrationDateRange(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<Car> getCarsByRegistrationDateRange(LocalDate startDate, LocalDate endDate) {
         return null;
     }
 

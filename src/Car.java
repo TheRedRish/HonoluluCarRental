@@ -1,11 +1,19 @@
+import enums.CarBrand;
+import enums.CarType;
+import enums.FuelType;
+import enums.GearType;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Car {
+    private UUID id;
     private CarType carType;
     private CarBrand carBrand;
     private String model;
     private FuelType fuelType;
-    private LocalDateTime firstRegistrationDate;
+    private LocalDate firstRegistrationDate;
     private int odometer;
     private int motorSize;
     private GearType gearType;
@@ -16,7 +24,8 @@ public class Car {
     private int horsePower;
     private String registrationNumber;
 
-    public Car(CarBrand carBrand, String model, FuelType fuelType, LocalDateTime firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, String seatType, int seatAmount, int horsePower, String registrationNumber) {
+    public Car(CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, String seatType, int seatAmount, int horsePower, String registrationNumber) {
+        this.id = UUID.randomUUID();
         this.carBrand = carBrand;
         this.model = model;
         this.fuelType = fuelType;
@@ -33,16 +42,32 @@ public class Car {
         // TODO set carType
         this.carType = findCarType();
     }
+
+    public Car(UUID id, CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, String seatType, int seatAmount, int horsePower, String registrationNumber) {
+        this.id = id;
+        this.carBrand = carBrand;
+        this.model = model;
+        this.fuelType = fuelType;
+        this.firstRegistrationDate = firstRegistrationDate;
+        this.odometer = odometer;
+        this.motorSize = motorSize;
+        this.gearType = gearType;
+        this.hasAircondition = hasAircondition;
+        this.hasCruiseControl = hasCruiseControl;
+        this.seatType = seatType;
+        this.seatAmount = seatAmount;
+        this.horsePower = horsePower;
+        this.registrationNumber = registrationNumber;
+
+        this.carType = findCarType();
+    }
+
     private CarType findCarType(){
         return CarType.LUXURY;
     }
 
     public CarType getCarType() {
         return carType;
-    }
-
-    public void setCarType(CarType carType) {
-        this.carType = carType;
     }
 
     public CarBrand getCarBrand() {
@@ -69,11 +94,11 @@ public class Car {
         this.fuelType = fuelType;
     }
 
-    public LocalDateTime getFirstRegistrationDate() {
+    public LocalDate getFirstRegistrationDate() {
         return firstRegistrationDate;
     }
 
-    public void setFirstRegistrationDate(LocalDateTime firstRegistrationDate) {
+    public void setFirstRegistrationDate(LocalDate firstRegistrationDate) {
         this.firstRegistrationDate = firstRegistrationDate;
     }
 
@@ -147,5 +172,14 @@ public class Car {
 
     public void setHasCruiseControl(boolean hasCruiseControl) {
         this.hasCruiseControl = hasCruiseControl;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String toString(){
+        //TODO add toString
+        return "";
     }
 }

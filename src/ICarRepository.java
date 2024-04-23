@@ -1,3 +1,7 @@
+import enums.CarBrand;
+import enums.FuelType;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -8,7 +12,7 @@ public interface ICarRepository {
     List<Car> getCarsByBrand(CarBrand carBrand);
     List<Car> getCarsByFuelType(FuelType fuelType);
     List<Car> getCarsByModel(String model);
-    List<Car> getCarsByRegistrationDateRange(LocalDateTime startDate, LocalDateTime endDate);
+    List<Car> getCarsByRegistrationDateRange(LocalDate startDate, LocalDate endDate);
     void updateCar(Car updatedCar);
     void deleteCarByRegistrationNumber(String registrationNumber);
 }

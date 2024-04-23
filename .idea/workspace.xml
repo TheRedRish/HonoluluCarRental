@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HonoluluCarRental.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CompanyRenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileCarRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileRentalContractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileRenterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FuelType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GearType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ICarRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IRentalContractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IRenterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrivateRenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RentalContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renter.java" afterDir="false" />
-    </list>
+    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2fUsqnPQQkrq4bOAH5b8w5cuovm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,8 +35,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RunManager">
@@ -72,6 +58,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>

@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class CompanyRenter extends Renter {
     private String companyName;
     private String companyAddress;
@@ -6,6 +8,14 @@ public class CompanyRenter extends Renter {
 
     public CompanyRenter(String name, String address, String zipCode, String city, String phoneNumber, String phone, String email, String companyName, String companyAddress, String companyPhoneNumber, int companyRegistrationNumber) {
         super(name, address, zipCode, city, phoneNumber, phone, email);
+        this.companyName = companyName;
+        this.companyAddress = companyAddress;
+        this.companyPhoneNumber = companyPhoneNumber;
+        this.companyRegistrationNumber = companyRegistrationNumber;
+    }
+
+    public CompanyRenter(UUID id, String name, String address, String zipCode, String city, String phoneNumber, String phone, String email, String companyName, String companyAddress, String companyPhoneNumber, int companyRegistrationNumber) {
+        super(id, name, address, zipCode, city, phoneNumber, phone, email);
         this.companyName = companyName;
         this.companyAddress = companyAddress;
         this.companyPhoneNumber = companyPhoneNumber;
