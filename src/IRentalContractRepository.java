@@ -1,12 +1,14 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 public interface IRentalContractRepository {
     void addRentalContract(RentalContract rentalContract);
     List<RentalContract> getAllRentalContracts();
     RentalContract getRentalContractByRenter(Renter renter);
-    List<RentalContract> getRentalContractByDateRange(LocalDateTime startDate, LocalDateTime endDate);
+    RentalContract getRentalContractById(UUID id);
+    List<RentalContract> getRentalContractByDateRange(LocalDate startDate, LocalDate endDate);
     void updateRentalContract(RentalContract updatedRentalContract);
     void deleteRentalContractByRenter(Renter renter);
-    void deleteRentalContractByCar(Car car);
+    void deleteRentalContractById(UUID id);
 }

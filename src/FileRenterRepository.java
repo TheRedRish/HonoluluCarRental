@@ -1,7 +1,3 @@
-import enums.CarBrand;
-import enums.FuelType;
-import enums.GearType;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +10,9 @@ import java.util.UUID;
 public class FileRenterRepository implements IRenterRepository {
     private static final String FILE_PATH = "src/repositoryFiles/renterRepository.txt";
     private static final String argSeparator = "//##//";
+
+    public FileRenterRepository() {
+    }
 
     @Override
     public void addRenter(Renter renter) {
@@ -65,10 +64,10 @@ public class FileRenterRepository implements IRenterRepository {
     }
 
     @Override
-    public Renter getRenterByName(String name) {
+    public Renter getRenterById(UUID id) {
         List<Renter> allRenters = getAllRenters();
         for (Renter renter : allRenters) {
-            if (renter.getName().equalsIgnoreCase(name)) {
+            if (renter.getId().equals(id)) {
                 return renter;
             }
         }
@@ -76,14 +75,27 @@ public class FileRenterRepository implements IRenterRepository {
     }
 
     @Override
-    public Renter getRenterByPhoneNumber(String phoneNumber) {
+    public List<Renter> getRenterByName(String name) {
         List<Renter> allRenters = getAllRenters();
+        List<Renter> allRenterMatches = new ArrayList<>();
         for (Renter renter : allRenters) {
-            if (renter.getPhoneNumber().equalsIgnoreCase(phoneNumber)) {
-                return renter;
+            if (renter.getName().equalsIgnoreCase(name)) {
+                allRenterMatches.add(renter);
             }
         }
-        return null;
+        return allRenterMatches;
+    }
+
+    @Override
+    public List<Renter> getRenterByPhoneNumber(String phoneNumber) {
+        List<Renter> allRenters = getAllRenters();
+        List<Renter> allRenterMatches = new ArrayList<>();
+        for (Renter renter : allRenters) {
+            if (renter.getPhoneNumber().equalsIgnoreCase(phoneNumber)) {
+                allRenterMatches.add(renter);
+            }
+        }
+        return allRenterMatches;
     }
 
     @Override
@@ -110,6 +122,14 @@ public class FileRenterRepository implements IRenterRepository {
     public void deleteRenterByPhoneNumber(String phoneNumber) {
         List<Renter> allRenters = getAllRenters();
         if (allRenters.removeIf(renter -> renter.getPhoneNumber().equalsIgnoreCase(phoneNumber))) {
+            saveAllRenters(allRenters);
+        }
+    }
+
+    @Override
+    public void deleteRenterById(UUID id) {
+        List<Renter> allRenters = getAllRenters();
+        if (allRenters.removeIf(renter -> renter.getId().equals(id))) {
             saveAllRenters(allRenters);
         }
     }

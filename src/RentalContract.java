@@ -1,15 +1,15 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class RentalContract {
-    private UUID id;
+    private final UUID id;
     private Renter renter;
-    private LocalDateTime fromDate;
-    private LocalDateTime toDate;
+    private LocalDate fromDate;
+    private LocalDate toDate;
     private int maxKmAllowed;
     private Car car;
 
-    public RentalContract(Renter renter, LocalDateTime fromDate, LocalDateTime toDate, int maxKmAllowed, Car car) {
+    public RentalContract(Renter renter, LocalDate fromDate, LocalDate toDate, int maxKmAllowed, Car car) {
         this.id = UUID.randomUUID();
         this.renter = renter;
         this.fromDate = fromDate;
@@ -18,7 +18,7 @@ public class RentalContract {
         this.car = car;
     }
 
-    public RentalContract(UUID id, Renter renter, LocalDateTime fromDate, LocalDateTime toDate, int maxKmAllowed, Car car) {
+    public RentalContract(UUID id, Renter renter, LocalDate fromDate, LocalDate toDate, int maxKmAllowed, Car car) {
         this.id = id;
         this.renter = renter;
         this.fromDate = fromDate;
@@ -35,19 +35,19 @@ public class RentalContract {
         this.renter = renter;
     }
 
-    public LocalDateTime getFromDate() {
+    public LocalDate getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(LocalDateTime fromDate) {
+    public void setFromDate(LocalDate fromDate) {
         this.fromDate = fromDate;
     }
 
-    public LocalDateTime getToDate() {
+    public LocalDate getToDate() {
         return toDate;
     }
 
-    public void setToDate(LocalDateTime toDate) {
+    public void setToDate(LocalDate toDate) {
         this.toDate = toDate;
     }
 
@@ -69,5 +69,33 @@ public class RentalContract {
 
     public UUID getId() {
         return id;
+    }
+
+    public void updateValues(RentalContract otherContract) {
+        this.renter = otherContract.getRenter();
+        this.fromDate = otherContract.getFromDate();
+        this.toDate = otherContract.getToDate();
+        this.maxKmAllowed = otherContract.getMaxKmAllowed();
+        this.car = otherContract.getCar();
+    }
+
+    public String getConsoleSaveString(String argSeparator) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id.toString()).append(argSeparator);
+        stringBuilder.append(renter.getId().toString()).append(argSeparator);
+        stringBuilder.append(fromDate).append(argSeparator);
+        stringBuilder.append(toDate).append(argSeparator);
+        stringBuilder.append(maxKmAllowed).append(argSeparator);
+        stringBuilder.append(car.getId().toString());
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Renter: " + renter.getName() + "\n" +
+                "Car: " + car.getCarBrand() + " " + car.getModel() + "\n" +
+                "From Date: " + fromDate + "\n" +
+                "To Date: " + toDate + "\n" +
+                "Max Km Allowed: " + maxKmAllowed;
     }
 }

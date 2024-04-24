@@ -1,12 +1,12 @@
 import enums.CarBrand;
 import enums.FuelType;
 import enums.GearType;
+import enums.SeatType;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +15,9 @@ import java.util.UUID;
 public class FileCarRepository implements ICarRepository {
     private static final String FILE_PATH = "src/repositoryFiles/carRepository.txt";
     private static final String argSeparator = "//##//";
+
+    public FileCarRepository() {
+    }
 
     /**
      * Adds car to file
@@ -56,7 +59,7 @@ public class FileCarRepository implements ICarRepository {
                 GearType gearType = GearType.valueOf(parts[7]);
                 boolean hasAircondition = Boolean.parseBoolean(parts[8]);
                 boolean hasCruiseControl = Boolean.parseBoolean(parts[9]);
-                String seatType = parts[10];
+                SeatType seatType = SeatType.valueOf(parts[10]);
                 int seatAmount = Integer.parseInt(parts[11]);
                 int horsePower = Integer.parseInt(parts[12]);
                 String registrationNumber = parts[13];
@@ -80,6 +83,17 @@ public class FileCarRepository implements ICarRepository {
         List<Car> allCars = getAllCars();
         for (Car car : allCars) {
             if (car.getRegistrationNumber().equals(registrationNumber)) {
+                return car;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Car getCarById(UUID id) {
+        List<Car> allCars = getAllCars();
+        for (Car car : allCars) {
+            if (car.getId().equals(id)) {
                 return car;
             }
         }
@@ -182,6 +196,14 @@ public class FileCarRepository implements ICarRepository {
     public void deleteCarByRegistrationNumber(String registrationNumber) {
         List<Car> allCars = getAllCars();
         if (allCars.removeIf(car -> car.getRegistrationNumber().equalsIgnoreCase(registrationNumber))) {
+            saveAllCars(allCars);
+        }
+    }
+
+    @Override
+    public void deleteCarById(UUID id) {
+        List<Car> allCars = getAllCars();
+        if (allCars.removeIf(car -> car.getId().equals(id))) {
             saveAllCars(allCars);
         }
     }

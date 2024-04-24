@@ -3,5 +3,6 @@ package enums;
 public enum CarType {
     LUXURY,
     FAMILY,
-    SPORT
+    SPORT,
+    UNCATEGORIZED
 }

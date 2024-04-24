@@ -2,18 +2,18 @@ import enums.CarBrand;
 import enums.FuelType;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 public class HonoluluCarRentalService {
     private final ICarRepository carRepository;
-    private final IRentalContractRepository rentalContractRepository;
     private final IRenterRepository renterRepository;
+    private final IRentalContractRepository rentalContractRepository;
 
-    public HonoluluCarRentalService(ICarRepository carRepository, IRentalContractRepository rentalContractRepository, IRenterRepository renterRepository) {
+    public HonoluluCarRentalService(ICarRepository carRepository, IRenterRepository renterRepository,IRentalContractRepository rentalContractRepository) {
         this.carRepository = carRepository;
-        this.rentalContractRepository = rentalContractRepository;
         this.renterRepository = renterRepository;
+        this.rentalContractRepository = rentalContractRepository;
     }
 
     //<editor-fold desc="car">
@@ -52,6 +52,10 @@ public class HonoluluCarRentalService {
     public void deleteCarByRegistrationNumber(String registrationNumber) {
         carRepository.deleteCarByRegistrationNumber(registrationNumber);
     }
+
+    public void deleteCarById(UUID id){
+        carRepository.deleteCarById(id);
+    }
     //</editor-fold>
 
     //<editor-fold desc="renter">
@@ -63,11 +67,11 @@ public class HonoluluCarRentalService {
         return renterRepository.getAllRenters();
     }
 
-    public Renter getRenterByName(String name) {
+    public List<Renter> getRenterByName(String name) {
         return renterRepository.getRenterByName(name);
     }
 
-    public Renter getRenterByPhoneNumber(String phoneNumber) {
+    public List<Renter> getRenterByPhoneNumber(String phoneNumber) {
         return renterRepository.getRenterByPhoneNumber(phoneNumber);
     }
 
@@ -81,6 +85,10 @@ public class HonoluluCarRentalService {
 
     public void deleteRenterByPhoneNumber(String phoneNumber) {
         renterRepository.deleteRenterByPhoneNumber(phoneNumber);
+    }
+
+    public void deleteRenterById(UUID id){
+        renterRepository.deleteRenterById(id);
     }
     //</editor-fold>
 
@@ -98,7 +106,7 @@ public class HonoluluCarRentalService {
         return rentalContractRepository.getRentalContractByRenter(renter);
     }
 
-    public List<RentalContract> getRentalContractByDateRange(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<RentalContract> getRentalContractByDateRange(LocalDate startDate, LocalDate endDate) {
         return rentalContractRepository.getRentalContractByDateRange(startDate, endDate);
     }
 
@@ -110,8 +118,8 @@ public class HonoluluCarRentalService {
         rentalContractRepository.deleteRentalContractByRenter(renter);
     }
 
-    public void deleteRentalContractByCar(Car car) {
-        rentalContractRepository.deleteRentalContractByCar(car);
+    public void deleteRentalContractById(UUID id){
+        rentalContractRepository.deleteRentalContractById(id);
     }
     //</editor-fold>
 }

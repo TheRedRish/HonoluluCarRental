@@ -1,7 +1,7 @@
 import java.util.UUID;
 
 public class Renter {
-    private UUID id;
+    private final UUID id;
     private String name;
     private String address;
     private String zipCode;

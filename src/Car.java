@@ -1,14 +1,10 @@
-import enums.CarBrand;
-import enums.CarType;
-import enums.FuelType;
-import enums.GearType;
+import enums.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Car {
-    private UUID id;
+    private final UUID id;
     private CarType carType;
     private CarBrand carBrand;
     private String model;
@@ -19,12 +15,12 @@ public class Car {
     private GearType gearType;
     private boolean hasAircondition;
     private boolean hasCruiseControl;
-    private String seatType;
+    private SeatType seatType;
     private int seatAmount;
     private int horsePower;
     private String registrationNumber;
 
-    public Car(CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, String seatType, int seatAmount, int horsePower, String registrationNumber) {
+    public Car(CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, SeatType seatType, int seatAmount, int horsePower, String registrationNumber) {
         this.id = UUID.randomUUID();
         this.carBrand = carBrand;
         this.model = model;
@@ -42,7 +38,7 @@ public class Car {
         this.carType = findCarType();
     }
 
-    public Car(UUID id, CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, String seatType, int seatAmount, int horsePower, String registrationNumber) {
+    public Car(UUID id, CarBrand carBrand, String model, FuelType fuelType, LocalDate firstRegistrationDate, int odometer, int motorSize, GearType gearType, boolean hasAircondition, boolean hasCruiseControl, SeatType seatType, int seatAmount, int horsePower, String registrationNumber) {
         this.id = id;
         this.carBrand = carBrand;
         this.model = model;
@@ -62,8 +58,15 @@ public class Car {
     }
 
     private CarType findCarType() {
-        // TODO set carType
-        return CarType.LUXURY;
+        if (motorSize > 3000 && gearType.equals(GearType.AUTOMATIC) && hasAircondition && hasCruiseControl && seatType.equals(SeatType.LEATHER)) {
+            return CarType.LUXURY;
+        } else if(gearType.equals(GearType.MANUAL) && hasAircondition && seatAmount > 7){
+            return CarType.FAMILY;
+        } else if (gearType.equals(GearType.MANUAL) && horsePower > 200){
+            return CarType.SPORT;
+        } else {
+            return CarType.UNCATEGORIZED;
+        }
     }
 
     public CarType getCarType() {
@@ -134,11 +137,11 @@ public class Car {
         this.hasAircondition = hasAircondition;
     }
 
-    public String getSeatType() {
+    public SeatType getSeatType() {
         return seatType;
     }
 
-    public void setSeatType(String seatType) {
+    public void setSeatType(SeatType seatType) {
         this.seatType = seatType;
     }
 
@@ -216,7 +219,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return  "Car Type: " + carType + "\n" +
+        return "Car Type: " + carType + "\n" +
                 "Car Brand: " + carBrand + "\n" +
                 "Model: " + model + "\n" +
                 "Fuel Type: " + fuelType + "\n" +
