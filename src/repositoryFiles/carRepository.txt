@@ -1,21 +1,19 @@
-f821b5ca-281d-4eda-9942-3ee9f9e6768f//##//TESLA//##//Model S//##//ELECTRIC//##//2022-12-20//##//5000//##//2500//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//700//##//ABC123
-8a39e6c3-5b67-4d8a-ae9b-9b4db32f5db0//##//BMW//##//X5//##//PETROL//##//2023-01-15//##//8000//##//3000//##//AUTOMATIC//##//true//##//true//##//Fabric//##//7//##//350//##//XYZ789
-0cd314f5-aa5a-435b-b6e7-1a98ed4b7211//##//MERCEDES//##//C-Class//##//DIESEL//##//2022-11-05//##//6000//##//2200//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//300//##//DEF456
-b64835cf-14b4-41b0-81c6-16b34c306c41//##//AUDI//##//A6//##//PETROL//##//2023-03-08//##//4000//##//2800//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//400//##//GHI789
-e54fb78a-41d8-42d9-99b3-3a30f11aef0c//##//FORD//##//Mustang//##//PETROL//##//2023-02-17//##//7000//##//5000//##//MANUAL//##//true//##//false//##//Leather//##//4//##//600//##//JKL012
-9f117ca2-8c79-4c0b-98d1-290c3f720b88//##//TOYOTA//##//Camry//##//HYBRID//##//2022-10-30//##//3000//##//2500//##//AUTOMATIC//##//true//##//true//##//Fabric//##//5//##//250//##//MNO345
-6432c41e-51c8-48fb-80e7-93e8542b4f33//##//VOLKSWAGEN//##//Golf//##//DIESEL//##//2023-04-21//##//2000//##//2000//##//MANUAL//##//true//##//false//##//Fabric//##//5//##//150//##//PQR678
-3d5d901a-97de-43ef-bdb3-8c92cf43c925//##//HONDA//##//Accord//##//PETROL//##//2023-01-05//##//5000//##//3000//##//AUTOMATIC//##//true//##//true//##//Fabric//##//5//##//350//##//STU901
-15d23926-6741-4fe7-8e5c-0c60d9cb9c71//##//CHEVROLET//##//Camaro//##//PETROL//##//2022-11-12//##//6000//##//4500//##//MANUAL//##//true//##//false//##//Leather//##//4//##//550//##//VWX234
-20fd8162-9d9d-405f-93ef-08c415f1db50//##//NISSAN//##//Altima//##//PETROL//##//2023-02-28//##//4000//##//2500//##//AUTOMATIC//##//true//##//true//##//Fabric//##//5//##//200//##//YZA567
-5864223c-3e01-4fc4-b74f-0ecf421ad48e//##//JAGUAR//##//XF//##//DIESEL//##//2023-03-15//##//3000//##//2800//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//350//##//BCD890
-7e508108-26a1-47d3-b303-15512993ffea//##//PORSCHE//##//911//##//PETROL//##//2022-12-10//##//5000//##//3500//##//MANUAL//##//true//##//false//##//Leather//##//2//##//700//##//EFG123
-b527267d-7cd9-4734-b3f2-3b5f4ff02392//##//BUGATTI//##//Ghibli//##//PETROL//##//2023-04-05//##//2000//##//3000//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//450//##//HIJ456
-4dcbba0a-36db-485e-8ff2-f98db9447753//##//BENTLEY//##//Continental GT//##//PETROL//##//2022-11-28//##//1000//##//4000//##//AUTOMATIC//##//true//##//true//##//Leather//##//4//##//650//##//KLM789
-90a1be21-51f5-4dbd-b8d5-b2726a4d21f9//##//ASTON_MARTIN//##//DB11//##//PETROL//##//2023-03-30//##//3000//##//3800//##//AUTOMATIC//##//true//##//true//##//Leather//##//2//##//600//##//NOP012
-e2f2b07c-b460-4e8a-a34d-c9b7af24b296//##//FERRARI//##//488//##//PETROL//##//2023-04-15//##//500//##//3900//##//AUTOMATIC//##//true//##//true//##//Leather//##//2//##//700//##//QRS345
-2bf52e1d-0764-4048-9ee4-77e1fd42c47b//##//ROLLS_ROYCE//##//Phantom//##//PETROL//##//2022-12-18//##//200//##//5000//##//AUTOMATIC//##//true//##//true//##//Leather//##//4//##//600//##//TUV678
-41e77b6f-22d6-4565-9c76-3b85bba5b383//##//LAMBORGHINI//##//Aventador//##//PETROL//##//2023-01-20//##//100//##//6300//##//AUTOMATIC//##//true//##//true//##//Leather//##//2//##//800//##//WXY901
-63704a9e-7b91-45a7-9d82-f4803e3e0b53//##//MCLAREN//##//720S//##//PETROL//##//2023-02-10//##//1000//##//4000//##//AUTOMATIC//##//true//##//true//##//Leather//##//2//##//710//##//YZA234
-976f711d-65cd-4ad4-ae3b-fd75d681a6ab//##//BUGATTI//##//Chiron//##//PETROL//##//2023-04-02//##//100//##//8000//##//AUTOMATIC//##//true//##//true//##//Leather//##//2//##//1500//##//BCD5679a548938-76b4-41bf-8eee-3aa3e5eb7427//##//AUDI//##//Q4 E-Tron//##//ELECTRIC//##//2024-04-24//##//0//##//3000//##//AUTOMATIC//##//true//##//true//##//Leather//##//5//##//286//##//DS95918
-14c6e703-a98e-47ee-ba06-daa1ff2f0f30//##//AUDI//##//Q4 E-tron//##//ELECTRIC//##//2024-04-24//##//0//##//2400//##//AUTOMATIC//##//true//##//true//##//5//##//5//##//278//##//DS95918
+8a39e6c3-5b67-4d8a-ae9b-9b4db32f5db0//##//BMW//##//X5//##//PETROL//##//2023-01-15//##//8000//##//3000//##//AUTOMATIC//##//true//##//true//##//CLOTH//##//7//##//350//##//XYZ789
+0cd314f5-aa5a-435b-b6e7-1a98ed4b7211//##//MERCEDES//##//C-Class//##//DIESEL//##//2022-11-05//##//6000//##//2200//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//5//##//300//##//DEF456
+b64835cf-14b4-41b0-81c6-16b34c306c41//##//AUDI//##//A6//##//PETROL//##//2023-03-08//##//4000//##//2800//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//5//##//400//##//GHI789
+e54fb78a-41d8-42d9-99b3-3a30f11aef0c//##//FORD//##//Mustang//##//PETROL//##//2023-02-17//##//7000//##//5000//##//MANUAL//##//true//##//false//##//LEATHER//##//4//##//600//##//JKL012
+9f117ca2-8c79-4c0b-98d1-290c3f720b88//##//TOYOTA//##//Camry//##//HYBRID//##//2022-10-30//##//3000//##//2500//##//AUTOMATIC//##//true//##//true//##//CLOTH//##//5//##//250//##//MNO345
+6432c41e-51c8-48fb-80e7-93e8542b4f33//##//VOLKSWAGEN//##//Golf//##//DIESEL//##//2023-04-21//##//2000//##//2000//##//MANUAL//##//true//##//false//##//CLOTH//##//5//##//150//##//PQR678
+3d5d901a-97de-43ef-bdb3-8c92cf43c925//##//HONDA//##//Accord//##//PETROL//##//2023-01-05//##//5000//##//3000//##//AUTOMATIC//##//true//##//true//##//CLOTH//##//5//##//350//##//STU901
+15d23926-6741-4fe7-8e5c-0c60d9cb9c71//##//CHEVROLET//##//Camaro//##//PETROL//##//2022-11-12//##//6000//##//4500//##//MANUAL//##//true//##//false//##//LEATHER//##//4//##//550//##//VWX234
+5864223c-3e01-4fc4-b74f-0ecf421ad48e//##//JAGUAR//##//XF//##//DIESEL//##//2023-03-15//##//3000//##//2800//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//5//##//350//##//BCD890
+7e508108-26a1-47d3-b303-15512993ffea//##//PORSCHE//##//911//##//PETROL//##//2022-12-10//##//5000//##//3500//##//MANUAL//##//true//##//false//##//LEATHER//##//2//##//700//##//EFG123
+b527267d-7cd9-4734-b3f2-3b5f4ff02392//##//BUGATTI//##//Ghibli//##//PETROL//##//2023-04-05//##//2000//##//3000//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//5//##//450//##//HIJ456
+4dcbba0a-36db-485e-8ff2-f98db9447753//##//BENTLEY//##//Continental GT//##//PETROL//##//2022-11-28//##//1000//##//4000//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//4//##//650//##//KLM789
+90a1be21-51f5-4dbd-b8d5-b2726a4d21f9//##//ASTON_MARTIN//##//DB11//##//PETROL//##//2023-03-30//##//3000//##//3800//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//2//##//600//##//NOP012
+e2f2b07c-b460-4e8a-a34d-c9b7af24b296//##//FERRARI//##//488//##//PETROL//##//2023-04-15//##//500//##//3900//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//2//##//700//##//QRS345
+2bf52e1d-0764-4048-9ee4-77e1fd42c47b//##//ROLLS_ROYCE//##//Phantom//##//PETROL//##//2022-12-18//##//200//##//5000//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//4//##//600//##//TUV678
+41e77b6f-22d6-4565-9c76-3b85bba5b383//##//LAMBORGHINI//##//Aventador//##//PETROL//##//2023-01-20//##//100//##//6300//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//2//##//800//##//WXY901
+63704a9e-7b91-45a7-9d82-f4803e3e0b53//##//MCLAREN//##//720S//##//PETROL//##//2023-02-10//##//1000//##//4000//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//2//##//710//##//YZA234
+976f711d-65cd-4ad4-ae3b-fd75d681a6ab//##//BUGATTI//##//Chiron//##//PETROL//##//2023-04-02//##//100//##//8000//##//AUTOMATIC//##//true//##//true//##//LEATHER//##//2//##//1500//##//BCD5679a548938-76b4-41bf-8eee-3aa3e5eb7427
+14c6e703-a98e-47ee-ba06-daa1ff2f0f30//##//AUDI//##//Q4 E-tron//##//ELECTRIC//##//2024-04-24//##//0//##//2400//##//AUTOMATIC//##//true//##//true//##//VELVET//##//5//##//278//##//DS95918

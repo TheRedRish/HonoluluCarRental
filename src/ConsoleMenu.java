@@ -8,14 +8,26 @@ public class ConsoleMenu {
         this.menuItems = new LinkedHashMap<>();
     }
 
+    /**
+     * Add an item to the console menu.
+     * @param label The label for the menu item.
+     * @param action The action associated with the menu item.
+     */
     public void addItem(String label, Runnable action) {
         menuItems.put(label, action);
     }
 
+    /**
+     * Remove an item from the console menu.
+     * @param label The label of the menu item to be removed.
+     */
     public void removeItem(String label) {
         menuItems.remove(label);
     }
 
+    /**
+     * Display the menu on the console.
+     */
     public void displayMenu() {
         System.out.println("Menu:");
         int index = 1;
@@ -26,6 +38,9 @@ public class ConsoleMenu {
         System.out.println();
     }
 
+    /**
+     * Run the console menu.
+     */
     public void run() {
         while (true) {
             displayMenu();
