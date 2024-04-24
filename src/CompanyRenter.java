@@ -53,4 +53,33 @@ public class CompanyRenter extends Renter {
     public void setCompanyRegistrationNumber(int companyRegistrationNumber) {
         this.companyRegistrationNumber = companyRegistrationNumber;
     }
+
+    public void updateValues(CompanyRenter otherCompanyRenter) {
+        super.updateValues(otherCompanyRenter);
+        this.companyName = otherCompanyRenter.getCompanyName();
+        this.companyAddress = otherCompanyRenter.getCompanyAddress();
+        this.companyPhoneNumber = otherCompanyRenter.getCompanyPhoneNumber();
+        this.companyRegistrationNumber = otherCompanyRenter.getCompanyRegistrationNumber();
+    }
+
+    @Override
+    public String getConsoleSaveString(String argSeparator) {
+        StringBuilder stringBuilder = new StringBuilder(super.getConsoleSaveString(argSeparator));
+        stringBuilder.append(argSeparator);
+        stringBuilder.append(companyName).append(argSeparator);
+        stringBuilder.append(companyAddress).append(argSeparator);
+        stringBuilder.append(companyPhoneNumber).append(argSeparator);
+        stringBuilder.append(companyRegistrationNumber);
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "Company Name: " + companyName + "\n" +
+                "Company Address: " + companyAddress + "\n" +
+                "Company Phone Number: " + companyPhoneNumber + "\n" +
+                "Company Registration Number: " + companyRegistrationNumber;
+    }
+
 }
