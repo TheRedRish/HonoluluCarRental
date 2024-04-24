@@ -91,4 +91,39 @@ public class Renter {
     public UUID getId() {
         return id;
     }
+
+    public void updateValues(Renter otherRenter) {
+        this.name = otherRenter.getName();
+        this.address = otherRenter.getAddress();
+        this.zipCode = otherRenter.getZipCode();
+        this.city = otherRenter.getCity();
+        this.phoneNumber = otherRenter.getPhoneNumber();
+        this.phone = otherRenter.getPhone();
+        this.email = otherRenter.getEmail();
+    }
+
+    public String getConsoleSaveString(String argSeparator) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id.toString()).append(argSeparator);
+        stringBuilder.append(name).append(argSeparator);
+        stringBuilder.append(address).append(argSeparator);
+        stringBuilder.append(zipCode).append(argSeparator);
+        stringBuilder.append(city).append(argSeparator);
+        stringBuilder.append(phoneNumber).append(argSeparator);
+        stringBuilder.append(phone).append(argSeparator);
+        stringBuilder.append(email);
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return  "Name: " + name + "\n" +
+                "Address: " + address + "\n" +
+                "Zip Code: " + zipCode + "\n" +
+                "City: " + city + "\n" +
+                "Phone Number: " + phoneNumber + "\n" +
+                "Phone: " + phone + "\n" +
+                "Email: " + email;
+    }
+
 }

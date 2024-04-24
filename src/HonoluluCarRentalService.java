@@ -16,36 +16,6 @@ public class HonoluluCarRentalService {
         this.renterRepository = renterRepository;
     }
 
-    //<editor-fold desc="renter">
-    public void createRenter(Renter renter) {
-        renterRepository.addRenter(renter);
-    }
-
-    public List<Renter> getAllRenters() {
-        return renterRepository.getAllRenters();
-    }
-
-    public Renter getRenterByName(String name) {
-        return renterRepository.getRenterByName(name);
-    }
-
-    public Renter getRenterByPhoneNumber(String phoneNumber) {
-        return renterRepository.getRenterByPhoneNumber(phoneNumber);
-    }
-
-    public void updateRenter(Renter updatedRenter) {
-        renterRepository.updateRenter(updatedRenter);
-    }
-
-    public void deleteRenterByName(String name) {
-        renterRepository.deleteRenterByName(name);
-    }
-
-    public void deleteRenterByPhoneNumber(String phoneNumber) {
-        renterRepository.deleteRenterByPhoneNumber(phoneNumber);
-    }
-    //</editor-fold>
-
     //<editor-fold desc="car">
     public void addCar(Car car) {
         carRepository.addCar(car);
@@ -83,6 +53,37 @@ public class HonoluluCarRentalService {
         carRepository.deleteCarByRegistrationNumber(registrationNumber);
     }
     //</editor-fold>
+
+    //<editor-fold desc="renter">
+    public void addRenter(Renter renter) {
+        renterRepository.addRenter(renter);
+    }
+
+    public List<Renter> getAllRenters() {
+        return renterRepository.getAllRenters();
+    }
+
+    public Renter getRenterByName(String name) {
+        return renterRepository.getRenterByName(name);
+    }
+
+    public Renter getRenterByPhoneNumber(String phoneNumber) {
+        return renterRepository.getRenterByPhoneNumber(phoneNumber);
+    }
+
+    public void updateRenter(Renter updatedRenter) {
+        renterRepository.updateRenter(updatedRenter);
+    }
+
+    public void deleteRenterByName(String name) {
+        renterRepository.deleteRenterByName(name);
+    }
+
+    public void deleteRenterByPhoneNumber(String phoneNumber) {
+        renterRepository.deleteRenterByPhoneNumber(phoneNumber);
+    }
+    //</editor-fold>
+
 
     //<editor-fold desc="rental contract">
     public void addRentalContract(RentalContract rentalContract) {

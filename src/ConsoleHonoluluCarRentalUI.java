@@ -3,12 +3,13 @@ import enums.FuelType;
 import enums.GearType;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
     private HonoluluCarRentalService honoluluCarRentalService;
+    private static final String spacerString = "--------------------------------------";
 
     public ConsoleHonoluluCarRentalUI(HonoluluCarRentalService honoluluCarRentalService) {
         this.honoluluCarRentalService = honoluluCarRentalService;
@@ -64,8 +65,10 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
         Car newCar = new Car(carBrand, model, fuelType, firstRegistrationDate, odometer, moterSize, gearType, hasAircondition, hasCruiseControl, seatType, seatAmount, horsePower, registrationNumber);
         honoluluCarRentalService.addCar(newCar);
+        System.out.println(spacerString);
         System.out.println("New car has been added: ");
         System.out.println(newCar);
+        System.out.println();
     }
 
     @Override
@@ -130,8 +133,10 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
         System.out.println("Here is the result of your search: ");
         for (Car car : carMatches){
+            System.out.println(spacerString);
             System.out.println(car);
         }
+        System.out.println();
     }
 
     @Override
@@ -228,14 +233,21 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
         honoluluCarRentalService.updateCar(carToUpdate);
         System.out.println("The car has been updated.");
+        System.out.println();
     }
 
     @Override
     public void displayDeleteCar() {
-        System.out.println("<------Update car------>");
+        System.out.println("<------Delete car------>");
         String registrationNumberForCar = Utils.getStringInput("Enter registration number of car: ");
+        Car carToUpdate = honoluluCarRentalService.getCarByRegistrationNumber(registrationNumberForCar);
+        if (carToUpdate == null){
+            System.out.println("Car not found in system");
+            return;
+        }
         honoluluCarRentalService.deleteCarByRegistrationNumber(registrationNumberForCar);
         System.out.println("The car has been deleted");
+        System.out.println();
     }
     //</editor-fold>
 
@@ -252,22 +264,207 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
     @Override
     public void displayAddRenter() {
+        System.out.println("<------Add Renter------>");
+        // Find out which renter to create
+        System.out.println("Select renter type");
+        System.out.println("1. Private renter");
+        System.out.println("2. Commercial renter");
+        int userSelection = Utils.getIntInput("Enter the number of your choice (0 to exit): ", "Invalid selection", 0,2);
+        if (userSelection == 0){
+            return;
+        }
+        Renter renter = null;
+        String name = Utils.getStringInput("Name: ");
+        String address = Utils.getStringInput("Address: ");
+        String zipCode = Utils.getStringInput("ZipCode: ");
+        String city = Utils.getStringInput("City: ");
+        String phoneNumber = Utils.getStringInput("Phone number: ");
+        String phone = Utils.getStringInput("Phone: ");
+        String email = Utils.getStringInput("Email: ");
 
+        if (userSelection == 1){
+            String driversLicenceNumber = Utils.getStringInput("Drivers licence number: ");
+            System.out.println("Date of acquired licence");
+            LocalDate dateOfAcquiredLicense = Utils.getLocalDateInput();
+            renter = new PrivateRenter(name,address,zipCode,city,phoneNumber,phone,email,driversLicenceNumber,dateOfAcquiredLicense);
+        } else if (userSelection == 2){
+            String companyName = Utils.getStringInput("Company name: ");
+            String companyAddress = Utils.getStringInput("Company address: ");
+            String companyPhoneNumber = Utils.getStringInput("Company phone number: ");
+            int companyRegistrationNumber = Utils.getIntInput("Company registration number: ");
+            renter = new CompanyRenter(name,address,zipCode,city,phoneNumber,phone,email,companyName,companyAddress,companyPhoneNumber,companyRegistrationNumber);
+        }
+
+        if (renter == null){
+            System.out.println("Something went wrong try again.");
+            return;
+        }
+        honoluluCarRentalService.addRenter(renter);
+        System.out.println(spacerString);
+        System.out.println("New renter has been added: ");
+        System.out.println(renter);
+        System.out.println();
     }
 
     @Override
     public void displaySearchRenters() {
+        System.out.println("<------Search car------>");
+        System.out.println("What do you want to search by?");
+        System.out.println("1. Name");
+        System.out.println("2. Phone number");
 
+        List<Renter> renterMatches = new ArrayList<>();
+
+        int userSelection = Utils.getIntInput("Enter the number of your choice (0 to exit): ", "Invalid selection", 0,2);
+        switch (userSelection) {
+            case 0:
+                return;
+            case 1:
+                String name = Utils.getStringInput("Enter name: ");
+                Renter renterByName = honoluluCarRentalService.getRenterByName(name);
+                if (renterByName != null){
+                    renterMatches.add(renterByName);
+                }
+                break;
+            case 2:
+                String phoneNumber = Utils.getStringInput("Enter phoneNumber: ");
+                Renter renterByPhoneNumber = honoluluCarRentalService.getRenterByPhoneNumber(phoneNumber);
+                if (renterByPhoneNumber != null){
+                    renterMatches.add(renterByPhoneNumber);
+                }
+                break;
+            default:
+                break;
+        }
+
+        System.out.println("Here is the result of your search: ");
+        for (Renter renter : renterMatches){
+            System.out.println(spacerString);
+            System.out.println(renter);
+        }
+        System.out.println();
     }
 
     @Override
     public void displayUpdateRenter() {
+        System.out.println("<------Update Renter------>");
+        //TODO add a way to select specific renter, name is not unique
+        String nameOfRenter = Utils.getStringInput("Enter name of renter: ");
+        Renter renterToUpdate = honoluluCarRentalService.getRenterByName(nameOfRenter);
+        if (renterToUpdate == null){
+            System.out.println("Renter not found in system");
+            return;
+        }
+        boolean updatingCar;
+        do {
+            System.out.println("Select what to update on the car:");
+            System.out.println("1. Name");
+            System.out.println("2. Address");
+            System.out.println("3. Zipcode");
+            System.out.println("4. City");
+            System.out.println("5. Phone number");
+            System.out.println("6. Phone");
+            System.out.println("7. Email");
+            int userSelection = 0;
+            if (renterToUpdate instanceof PrivateRenter){
+                System.out.println("8. Drivers licence number");
+                System.out.println("9. Date of acquired licence");
+                userSelection = Utils.getIntInput("Enter the number of your choice (0 to exit): ", "Invalid selection", 0, 9);
+            } else if (renterToUpdate instanceof CompanyRenter) {
+                System.out.println("8. Company name");
+                System.out.println("9. Company address");
+                System.out.println("10. Company phone number");
+                System.out.println("11. Company registration number");
+                userSelection = Utils.getIntInput("Enter the number of your choice (0 to exit): ", "Invalid selection", 0, 11);
+            }
 
+            switch (userSelection) {
+                case 0:
+                    return;
+                case 1:
+                    String name = Utils.getStringInput("Name: ");
+                    renterToUpdate.setName(name);
+                    break;
+                case 2:
+                    String address = Utils.getStringInput("Address: ");
+                    renterToUpdate.setAddress(address);
+                    break;
+                case 3:
+                    String zipCode = Utils.getStringInput("ZipCode: ");
+                    renterToUpdate.setZipCode(zipCode);
+                    break;
+                case 4:
+                    String city = Utils.getStringInput("City: ");
+                    renterToUpdate.setCity(city);
+                    break;
+                case 5:
+                    String phoneNumber = Utils.getStringInput("Phone number: ");
+                    renterToUpdate.setPhoneNumber(phoneNumber);
+                    break;
+                case 6:
+                    String phone = Utils.getStringInput("Phone: ");
+                    renterToUpdate.setPhone(phone);
+                    break;
+                case 7:
+                    String email = Utils.getStringInput("Email: ");
+                    renterToUpdate.setEmail(email);
+                    break;
+                case 8:
+                    if (renterToUpdate instanceof PrivateRenter){
+                        String driversLicenceNumber = Utils.getStringInput("Drivers licence number: ");
+
+                        ((PrivateRenter) renterToUpdate).setDriversLicenceNumber(driversLicenceNumber);
+                    } else if (renterToUpdate instanceof CompanyRenter) {
+                        String companyName = Utils.getStringInput("Company name: ");
+                        ((CompanyRenter) renterToUpdate).setCompanyName(companyName);
+                    }
+                    break;
+                case 9:
+                    if (renterToUpdate instanceof PrivateRenter){
+                        System.out.println("Date of acquired licence");
+                        LocalDate dateOfAcquiredLicense = Utils.getLocalDateInput();
+                        ((PrivateRenter) renterToUpdate).setDateOfAcquiredLicense(dateOfAcquiredLicense);
+                    } else if (renterToUpdate instanceof CompanyRenter) {
+                        String companyAddress = Utils.getStringInput("Company address: ");
+                        ((CompanyRenter) renterToUpdate).setCompanyAddress(companyAddress);
+                    }
+                    break;
+                case 10:
+                    if (renterToUpdate instanceof CompanyRenter) {
+                        String companyPhoneNumber = Utils.getStringInput("Company phone number: ");
+                        ((CompanyRenter) renterToUpdate).setCompanyPhoneNumber(companyPhoneNumber);
+                    }
+                    break;
+                case 11:
+                    if (renterToUpdate instanceof CompanyRenter) {
+                        int companyRegistrationNumber = Utils.getIntInput("Company registration number: ");
+                        ((CompanyRenter) renterToUpdate).setCompanyRegistrationNumber(companyRegistrationNumber);
+                    }
+                    break;
+                default:
+                    break;
+            }
+            updatingCar = Utils.getStringInput("Update more on the system? y/n ", "Please answer y/n", new String[]{"y", "n"}).equalsIgnoreCase("y");
+        } while(updatingCar);
+
+        honoluluCarRentalService.updateRenter(renterToUpdate);
+        System.out.println("The renter has been updated.");
+        System.out.println();
     }
 
     @Override
     public void displayDeleteRenter() {
-
+        System.out.println("<------Delete Renter------>");
+        //TODO add a way to select specific renter, name is not unique
+        String name = Utils.getStringInput("Enter name of renter: ");
+        Renter renterToUpdate = honoluluCarRentalService.getRenterByName(name);
+        if (renterToUpdate == null){
+            System.out.println("Renter not found in system");
+            return;
+        }
+        honoluluCarRentalService.deleteRenterByName(name);
+        System.out.println("The renter has been deleted");
+        System.out.println();
     }
     //</editor-fold>
 

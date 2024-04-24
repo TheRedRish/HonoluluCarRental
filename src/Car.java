@@ -39,7 +39,6 @@ public class Car {
         this.seatAmount = seatAmount;
         this.horsePower = horsePower;
         this.registrationNumber = registrationNumber;
-        // TODO set carType
         this.carType = findCarType();
     }
 
@@ -62,7 +61,8 @@ public class Car {
         this.carType = findCarType();
     }
 
-    private CarType findCarType(){
+    private CarType findCarType() {
+        // TODO set carType
         return CarType.LUXURY;
     }
 
@@ -126,7 +126,7 @@ public class Car {
         this.gearType = gearType;
     }
 
-    public boolean isHasAircondition() {
+    public boolean hasAircondition() {
         return hasAircondition;
     }
 
@@ -166,7 +166,7 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-    public boolean isHasCruiseControl() {
+    public boolean hasCruiseControl() {
         return hasCruiseControl;
     }
 
@@ -178,8 +178,58 @@ public class Car {
         return id;
     }
 
-    public String toString(){
-        //TODO add toString
-        return "";
+    public String getConsoleSaveString(String argSeparator) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id.toString()).append(argSeparator);
+        stringBuilder.append(carBrand.toString()).append(argSeparator);
+        stringBuilder.append(model).append(argSeparator);
+        stringBuilder.append(fuelType.toString()).append(argSeparator);
+        stringBuilder.append(firstRegistrationDate.toString()).append(argSeparator);
+        stringBuilder.append(odometer).append(argSeparator);
+        stringBuilder.append(motorSize).append(argSeparator);
+        stringBuilder.append(gearType.toString()).append(argSeparator);
+        stringBuilder.append(hasAircondition).append(argSeparator);
+        stringBuilder.append(hasCruiseControl).append(argSeparator);
+        stringBuilder.append(seatType).append(argSeparator);
+        stringBuilder.append(seatAmount).append(argSeparator);
+        stringBuilder.append(horsePower).append(argSeparator);
+        stringBuilder.append(registrationNumber);
+        return stringBuilder.toString();
     }
+
+    public void updateValues(Car otherCar) {
+        this.carBrand = otherCar.getCarBrand();
+        this.model = otherCar.getModel();
+        this.fuelType = otherCar.getFuelType();
+        this.firstRegistrationDate = otherCar.getFirstRegistrationDate();
+        this.odometer = otherCar.getOdometer();
+        this.motorSize = otherCar.getMotorSize();
+        this.gearType = otherCar.getGearType();
+        this.hasAircondition = otherCar.hasAircondition();
+        this.hasCruiseControl = otherCar.hasCruiseControl();
+        this.seatType = otherCar.getSeatType();
+        this.seatAmount = otherCar.getSeatAmount();
+        this.horsePower = otherCar.getHorsePower();
+        this.registrationNumber = otherCar.getRegistrationNumber();
+        this.carType = getCarType();
+    }
+
+    @Override
+    public String toString() {
+        return  "Car Type: " + carType + "\n" +
+                "Car Brand: " + carBrand + "\n" +
+                "Model: " + model + "\n" +
+                "Fuel Type: " + fuelType + "\n" +
+                "First Registration Date: " + firstRegistrationDate + "\n" +
+                "Odometer: " + odometer + " km\n" +
+                "Motor Size: " + motorSize + " ccm\n" +
+                "Gear Type: " + gearType + "\n" +
+                "Air Condition: " + (hasAircondition ? "Yes" : "No") + "\n" +
+                "Cruise Control: " + (hasCruiseControl ? "Yes" : "No") + "\n" +
+                "Seat Type: " + seatType + "\n" +
+                "Seat Amount: " + seatAmount + "\n" +
+                "Horsepower: " + horsePower + " HP\n" +
+                "Registration Number: " + registrationNumber;
+    }
+
 }

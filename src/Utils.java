@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Utils {
     //<editor-fold desc="UserInputUtil">
@@ -252,6 +253,26 @@ public class Utils {
                 }
             }
             if (!userInput.trim().isEmpty() && meetsConditions) {
+                validInput = true;
+            } else {
+                System.out.printf(errorMessage + "\n");
+            }
+        } while (!validInput);
+
+
+        return userInput;
+    }
+
+    public static String getStringInput(String promptMessage, String errorMessage, Pattern regexPattern) {
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
+        boolean validInput = false;
+
+        do {
+            System.out.printf(promptMessage);
+            userInput = scanner.nextLine();
+
+            if (!userInput.trim().isEmpty() && regexPattern.matcher(userInput).matches()) {
                 validInput = true;
             } else {
                 System.out.printf(errorMessage + "\n");
