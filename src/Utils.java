@@ -90,12 +90,13 @@ public class Utils {
 
     /**
      * Get an integer input from the user within a specified range.
+     * Ignores range if maxNum is smaller than minNum
      *
      * @param promptMessage The message prompt displayed to the user.
      * @param errorMessage  The error message displayed if the input is invalid.
      * @param minNum        The minimum value of the range.
      * @param maxNum        The maximum value of the range.
-     * @return The integer input by the user.
+     * @return The integer input by the user. Ignores range if minNum > maxNum
      */
     public static int getIntInput(String promptMessage, String errorMessage, int minNum, int maxNum) {
         Scanner scanner = new Scanner(System.in);
@@ -384,6 +385,9 @@ public class Utils {
      * @return The selected object.
      */
     public static <T> T selectObject(List<T> objects) {
+        if (objects.isEmpty()){
+            return null;
+        }
         // Print the list of objects with numbers
         for (int i = 0; i < objects.size(); i++) {
             System.out.println("--------------------------------------");

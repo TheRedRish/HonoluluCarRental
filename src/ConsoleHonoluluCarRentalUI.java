@@ -144,6 +144,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
     private Car getCarFromSearch() {
         List<Car> carList = getCarListFromSearch();
+        //TODO Problem with empty car from search and selection. Might be in utility
         return Utils.selectObject(carList);
     }
 
@@ -505,6 +506,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
         // Find out which renter to add to contract
         System.out.println("Search for car to add to contract");
         Car car = getCarFromSearch();
+        //TODO handle car == null;
 
         System.out.println("What date does the renting start from:");
         LocalDate fromDate = Utils.getLocalDateInput();
@@ -601,6 +603,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
                 case 2:
                     System.out.println("Search for car to add to contract");
                     Car car = getCarFromSearch();
+                    // Handle car == null
                     rentalContractToUpdate.setCar(car);
                     break;
                 case 3:
