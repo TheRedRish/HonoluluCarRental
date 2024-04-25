@@ -1,7 +1,9 @@
+import java.nio.ByteBuffer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class Utils {
@@ -452,6 +454,18 @@ public class Utils {
             }
         } while (date == null);
         return date;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="bytes">
+    public static UUID convertBytesToUUID(byte[] bytes) {
+        if (bytes == null || bytes.length != 16) {
+            throw new IllegalArgumentException("Invalid byte array for UUID");
+        }
+        ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
+        long mostSignificantBits = byteBuffer.getLong();
+        long leastSignificantBits = byteBuffer.getLong();
+        return new UUID(mostSignificantBits, leastSignificantBits);
     }
     //</editor-fold>
 }

@@ -1,6 +1,7 @@
 import enums.CarBrand;
 import enums.FuelType;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
@@ -8,7 +9,7 @@ import java.util.UUID;
 public interface ICarRepository {
     void addCar(Car car);
     List<Car> getAllCars();
-    Car getCarByRegistrationNumber(String registrationNumber);
+    Car getCarByRegistrationNumber(String registrationNumber) ;
     Car getCarById(UUID id);
     List<Car> getCarsByBrand(CarBrand carBrand);
     List<Car> getCarsByFuelType(FuelType fuelType);
