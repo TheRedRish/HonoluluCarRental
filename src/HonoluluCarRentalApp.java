@@ -22,7 +22,6 @@ public class HonoluluCarRentalApp {
             renterRepository = new FileRenterRepository();
         }
 
-
         IRentalContractRepository rentalContractRepository = new FileRentalContractRepository(renterRepository, carRepository);
 
         HonoluluCarRentalService honoluluCarRentalService = new HonoluluCarRentalService(carRepository, renterRepository, rentalContractRepository);
@@ -30,7 +29,6 @@ public class HonoluluCarRentalApp {
         IHonoluluCarRentalUI honoluluCarRentalUI = new ConsoleHonoluluCarRentalUI(honoluluCarRentalService);
 
         honoluluCarRentalUI.run();
-
 
     }
 }

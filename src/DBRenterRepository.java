@@ -41,6 +41,10 @@ public class DBRenterRepository implements IRenterRepository {
         List<Renter> renterList = new ArrayList<>();
         try (CallableStatement statement = connection.prepareCall("{CALL getAllCars()}")) {
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return renterList;
+            }
             while (resultSet.next()) {
                 renterList.add(mapResultSetToRenter(resultSet));
             }
@@ -56,6 +60,10 @@ public class DBRenterRepository implements IRenterRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getRenterById(?)}")) {
             statement.setString(1, id.toString());
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return renter;
+            }
             if (resultSet.next()) {
                 renter = mapResultSetToRenter(resultSet);
             }
@@ -71,6 +79,10 @@ public class DBRenterRepository implements IRenterRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getRenterByName(?)}")) {
             statement.setString(1, name);
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return renterList;
+            }
             while (resultSet.next()) {
                 renterList.add(mapResultSetToRenter(resultSet));
             }
@@ -86,6 +98,10 @@ public class DBRenterRepository implements IRenterRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getRenterByPhoneNumber(?)}")) {
             statement.setString(1, phoneNumber);
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return renterList;
+            }
             while (resultSet.next()) {
                 renterList.add(mapResultSetToRenter(resultSet));
             }

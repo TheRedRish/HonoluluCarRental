@@ -13,15 +13,6 @@ public class DBCarRepository implements ICarRepository {
         this.connection = connection;
     }
 
-    public void testConnection() {
-        try (connection) {
-            // Connection successful, you can now execute SQL queries
-            System.out.println("Connected to the database.");
-        } catch (SQLException e) {
-            System.err.println("Error connecting to the database: " + e.getMessage());
-        }
-    }
-
     @Override
     public void addCar(Car car) {
         try {
@@ -49,6 +40,10 @@ public class DBCarRepository implements ICarRepository {
         List<Car> cars = new ArrayList<>();
         try (CallableStatement statement = connection.prepareCall("{CALL getAllCars()}")) {
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return cars;
+            }
             while (resultSet.next()) {
                 cars.add(mapResultSetToCar(resultSet));
             }
@@ -64,6 +59,10 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getCarById(?)}")) {
             statement.setString(1, id.toString());
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return car;
+            }
             if (resultSet.next()) {
                 car = mapResultSetToCar(resultSet);
             }
@@ -79,6 +78,10 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getCarByRegistrationNumber(?)}")) {
             statement.setString(1, registrationNumber);
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return car;
+            }
             if (resultSet.next()) {
                 car = mapResultSetToCar(resultSet);
             }
@@ -94,6 +97,10 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getCarsByBrand(?)}")) {
             statement.setString(1, carBrand.toString());
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return cars;
+            }
             while (resultSet.next()) {
                 cars.add(mapResultSetToCar(resultSet));
             }
@@ -109,6 +116,10 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getCarsByFuelType(?)}")) {
             statement.setString(1, fuelType.toString());
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return cars;
+            }
             while (resultSet.next()) {
                 cars.add(mapResultSetToCar(resultSet));
             }
@@ -124,6 +135,10 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL getCarsByModel(?)}")) {
             statement.setString(1, model);
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return cars;
+            }
             while (resultSet.next()) {
                 cars.add(mapResultSetToCar(resultSet));
             }
@@ -140,6 +155,10 @@ public class DBCarRepository implements ICarRepository {
             statement.setDate(1, Date.valueOf(startDate));
             statement.setDate(2, Date.valueOf(endDate));
             ResultSet resultSet = statement.executeQuery();
+            // No rows because no result.
+            if (!resultSet.isBeforeFirst()) {
+                return cars;
+            }
             while (resultSet.next()) {
                 cars.add(mapResultSetToCar(resultSet));
             }

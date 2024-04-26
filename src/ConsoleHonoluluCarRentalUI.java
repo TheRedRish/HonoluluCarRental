@@ -120,17 +120,26 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
                 }
                 break;
             case 4:
-                String model = Utils.getStringInput("Enter car model");
+                String model = Utils.getStringInput("Enter car model: ");
                 List<Car> carsByModel = honoluluCarRentalService.getCarsByModel(model);
                 if (!carsByModel.isEmpty()) {
                     carMatches.addAll(carsByModel);
                 }
                 break;
             case 5:
-                System.out.println("Start date for search range");
-                LocalDate startDate = Utils.getLocalDateInput();
-                System.out.println("End date for search range");
-                LocalDate endDate = Utils.getLocalDateInput();
+                boolean selectingDateRange;
+                LocalDate startDate;
+                LocalDate endDate;
+                do {
+                    System.out.println("Start date for search range");
+                    startDate = Utils.getLocalDateInput();
+                    System.out.println("End date for search range");
+                    endDate = Utils.getLocalDateInput();
+                    selectingDateRange = startDate.isAfter(endDate);
+                    if (selectingDateRange) {
+                        System.out.println("Start date is after end date");
+                    }
+                } while (selectingDateRange);
                 List<Car> carsByRegistrationDateRange = honoluluCarRentalService.getCarsByRegistrationDateRange(startDate, endDate);
                 if (!carsByRegistrationDateRange.isEmpty()) {
                     carMatches.addAll(carsByRegistrationDateRange);
@@ -144,7 +153,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
     private Car getCarFromSearch() {
         List<Car> carList = getCarListFromSearch();
-        //TODO Problem with empty car from search and selection. Might be in utility
+        //TODO Problem with empty car from search and selection.
         return Utils.selectObject(carList);
     }
 

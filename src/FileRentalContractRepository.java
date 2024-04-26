@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class FileRentalContractRepository implements IRentalContractRepository{
-    private static final String FILE_PATH = "src/repositoryFiles/renterRepository.txt";
+    private static final String FILE_PATH = "src/repositoryFiles/rentalContractRepository.txt";
     private static final String argSeparator = "//##//";
     private final IRenterRepository renterRepository;
     private final ICarRepository carRepository;
