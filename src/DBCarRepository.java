@@ -59,10 +59,10 @@ public class DBCarRepository implements ICarRepository {
     }
 
     @Override
-    public Car getCarByRegistrationNumber(String registrationNumber) {
+    public Car getCarById(UUID id) {
         Car car = null;
-        try (CallableStatement statement = connection.prepareCall("{CALL getCarByRegistrationNumber(?)}")) {
-            statement.setString(1, registrationNumber);
+        try (CallableStatement statement = connection.prepareCall("{CALL getCarById(?)}")) {
+            statement.setString(1, id.toString());
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 car = mapResultSetToCar(resultSet);
@@ -74,10 +74,10 @@ public class DBCarRepository implements ICarRepository {
     }
 
     @Override
-    public Car getCarById(UUID id) {
+    public Car getCarByRegistrationNumber(String registrationNumber) {
         Car car = null;
-        try (CallableStatement statement = connection.prepareCall("{CALL getCarById(?)}")) {
-            statement.setString(1, id.toString());
+        try (CallableStatement statement = connection.prepareCall("{CALL getCarByRegistrationNumber(?)}")) {
+            statement.setString(1, registrationNumber);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 car = mapResultSetToCar(resultSet);

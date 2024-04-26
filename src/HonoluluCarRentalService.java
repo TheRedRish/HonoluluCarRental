@@ -68,11 +68,11 @@ public class HonoluluCarRentalService {
     }
 
     public List<Renter> getRenterByName(String name) {
-        return renterRepository.getRenterByName(name);
+        return renterRepository.getRentersByName(name);
     }
 
     public List<Renter> getRenterByPhoneNumber(String phoneNumber) {
-        return renterRepository.getRenterByPhoneNumber(phoneNumber);
+        return renterRepository.getRentersByPhoneNumber(phoneNumber);
     }
 
     public void updateRenter(Renter updatedRenter) {

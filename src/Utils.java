@@ -462,6 +462,13 @@ public class Utils {
     //</editor-fold>
 
     //<editor-fold desc="bytes">
+    /**
+     * Converts a byte array to a UUID.
+     *
+     * @param bytes the byte array representing the UUID
+     * @return the UUID object created from the byte array
+     * @throws IllegalArgumentException if the byte array is null or has an invalid length
+     */
     public static UUID convertBytesToUUID(byte[] bytes) {
         if (bytes == null || bytes.length != 16) {
             throw new IllegalArgumentException("Invalid byte array for UUID");

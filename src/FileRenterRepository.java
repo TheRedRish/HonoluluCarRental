@@ -75,7 +75,7 @@ public class FileRenterRepository implements IRenterRepository {
     }
 
     @Override
-    public List<Renter> getRenterByName(String name) {
+    public List<Renter> getRentersByName(String name) {
         List<Renter> allRenters = getAllRenters();
         List<Renter> allRenterMatches = new ArrayList<>();
         for (Renter renter : allRenters) {
@@ -87,7 +87,7 @@ public class FileRenterRepository implements IRenterRepository {
     }
 
     @Override
-    public List<Renter> getRenterByPhoneNumber(String phoneNumber) {
+    public List<Renter> getRentersByPhoneNumber(String phoneNumber) {
         List<Renter> allRenters = getAllRenters();
         List<Renter> allRenterMatches = new ArrayList<>();
         for (Renter renter : allRenters) {

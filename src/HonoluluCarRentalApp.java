@@ -12,13 +12,17 @@ public class HonoluluCarRentalApp {
         }
 
         ICarRepository carRepository;
+        IRenterRepository renterRepository;
         if (connection != null) {
             carRepository = new DBCarRepository(connection);
+            renterRepository = new DBRenterRepository(connection);
         } else {
+            System.out.println("Started program with no connection to DB");
             carRepository = new FileCarRepository();
+            renterRepository = new FileRenterRepository();
         }
 
-        IRenterRepository renterRepository = new FileRenterRepository();
+
         IRentalContractRepository rentalContractRepository = new FileRentalContractRepository(renterRepository, carRepository);
 
         HonoluluCarRentalService honoluluCarRentalService = new HonoluluCarRentalService(carRepository, renterRepository, rentalContractRepository);
