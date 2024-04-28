@@ -173,6 +173,7 @@ public class DBCarRepository implements ICarRepository {
         try (CallableStatement statement = connection.prepareCall("{CALL updateCar(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}")) {
             setValuesOfCarOnStatement(updatedCar, statement);
             statement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

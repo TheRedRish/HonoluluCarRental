@@ -4,27 +4,27 @@ import java.util.UUID;
 public class RentalContract {
     private final UUID id;
     private Renter renter;
+    private Car car;
     private LocalDate fromDate;
     private LocalDate toDate;
     private int maxKmAllowed;
-    private Car car;
 
-    public RentalContract(Renter renter, LocalDate fromDate, LocalDate toDate, int maxKmAllowed, Car car) {
+    public RentalContract(Renter renter, Car car, LocalDate fromDate, LocalDate toDate, int maxKmAllowed) {
         this.id = UUID.randomUUID();
         this.renter = renter;
+        this.car = car;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.maxKmAllowed = maxKmAllowed;
-        this.car = car;
     }
 
-    public RentalContract(UUID id, Renter renter, LocalDate fromDate, LocalDate toDate, int maxKmAllowed, Car car) {
+    public RentalContract(UUID id, Renter renter, Car car, LocalDate fromDate, LocalDate toDate, int maxKmAllowed) {
         this.id = id;
         this.renter = renter;
+        this.car = car;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.maxKmAllowed = maxKmAllowed;
-        this.car = car;
     }
 
     public Renter getRenter() {
@@ -83,10 +83,10 @@ public class RentalContract {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(id.toString()).append(argSeparator);
         stringBuilder.append(renter.getId().toString()).append(argSeparator);
+        stringBuilder.append(car.getId().toString());
         stringBuilder.append(fromDate).append(argSeparator);
         stringBuilder.append(toDate).append(argSeparator);
         stringBuilder.append(maxKmAllowed).append(argSeparator);
-        stringBuilder.append(car.getId().toString());
         return stringBuilder.toString();
     }
 

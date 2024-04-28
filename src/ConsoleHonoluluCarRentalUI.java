@@ -2,6 +2,7 @@ import enums.CarBrand;
 import enums.FuelType;
 import enums.GearType;
 import enums.SeatType;
+import jdk.jshell.execution.Util;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -65,6 +66,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
         String registrationNumber = Utils.getStringInput("Enter registration number: ");
 
         Car newCar = new Car(carBrand, model, fuelType, firstRegistrationDate, odometer, moterSize, gearType, hasAircondition, hasCruiseControl, seatType, seatAmount, horsePower, registrationNumber);
+        //TODO add handling for crashing during all service calls.
         honoluluCarRentalService.addCar(newCar);
         System.out.println(spacerString);
         System.out.println("New car has been added: ");
@@ -153,7 +155,6 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
 
     private Car getCarFromSearch() {
         List<Car> carList = getCarListFromSearch();
-        //TODO Problem with empty car from search and selection.
         return Utils.selectObject(carList);
     }
 
@@ -509,13 +510,32 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
     public void displayAddRentalContract() {
         System.out.println("<------Add Rental Contract------>");
         // Find out which renter to add to contract
-        System.out.println("Search for renter to add to contract");
-        Renter renter = getRenterFromSearch();
+        Renter renter;
+        boolean selectingRenter;
+        do {
+            System.out.println("Search for renter to add to contract");
+            renter = getRenterFromSearch();
+            if (renter == null) {
+                System.out.println("Renter not found in system");
+                selectingRenter = Utils.getStringInput("Try again? y/n ", "Please answer y/n", new String[]{"y", "n"}).equalsIgnoreCase("y");
+            } else {
+                selectingRenter = false;
+            }
+        } while (selectingRenter);
 
         // Find out which renter to add to contract
-        System.out.println("Search for car to add to contract");
-        Car car = getCarFromSearch();
-        //TODO handle car == null;
+        Car car;
+        boolean selectingCar;
+        do {
+            System.out.println("Search for car to add to contract");
+            car = getCarFromSearch();
+            if (car == null) {
+                System.out.println("Car not found in system");
+                selectingCar = Utils.getStringInput("Try again? y/n ", "Please answer y/n", new String[]{"y", "n"}).equalsIgnoreCase("y");
+            } else {
+                selectingCar = false;
+            }
+        } while (selectingCar);
 
         System.out.println("What date does the renting start from:");
         LocalDate fromDate = Utils.getLocalDateInput();
@@ -523,7 +543,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
         LocalDate toDate = Utils.getLocalDateInput();
         int maxKmAllowed = Utils.getIntInput("How many km are the renter allowed to drive? ");
 
-        RentalContract rentalContract = new RentalContract(renter, fromDate, toDate, maxKmAllowed, car);
+        RentalContract rentalContract = new RentalContract(renter, car, fromDate, toDate, maxKmAllowed);
 
         honoluluCarRentalService.addRentalContract(rentalContract);
         System.out.println(spacerString);
@@ -543,43 +563,6 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
             System.out.println(rentalContract);
         }
         System.out.println();
-    }
-
-    private RentalContract getRentalContractFromSearch() {
-        List<RentalContract> rentalContractListFromSearch = getRentalContractListFromSearch();
-        return Utils.selectObject(rentalContractListFromSearch);
-    }
-
-    private List<RentalContract> getRentalContractListFromSearch() {
-        System.out.println("What do you want to search by?");
-        System.out.println("1. Renter");
-        System.out.println("2. Date range");
-
-        List<RentalContract> rentalContractMatches = new ArrayList<>();
-
-        int userSelection = Utils.getIntInput("Enter the number of your choice: ", "Invalid selection", 1, 2);
-        switch (userSelection) {
-            case 1:
-                Renter renter = getRenterFromSearch();
-                RentalContract rentalContractByRenter = honoluluCarRentalService.getRentalContractByRenter(renter);
-                if (rentalContractByRenter != null) {
-                    rentalContractMatches.add(rentalContractByRenter);
-                }
-                break;
-            case 2:
-                System.out.println("Enter start date for range");
-                LocalDate startDate = Utils.getLocalDateInput();
-                System.out.println("Enter end date for range");
-                LocalDate endDate = Utils.getLocalDateInput();
-                List<RentalContract> rentalContractByDateRange = honoluluCarRentalService.getRentalContractByDateRange(startDate, endDate);
-                if (rentalContractByDateRange != null) {
-                    rentalContractMatches.addAll(rentalContractByDateRange);
-                }
-                break;
-            default:
-                break;
-        }
-        return rentalContractMatches;
     }
 
     @Override
@@ -652,6 +635,48 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
         honoluluCarRentalService.deleteRentalContractById(rentalContractFromSearch.getId());
         System.out.println("The rental contract has been deleted");
         System.out.println();
+    }
+
+    private RentalContract getRentalContractFromSearch() {
+        List<RentalContract> rentalContractListFromSearch = getRentalContractListFromSearch();
+        return Utils.selectObject(rentalContractListFromSearch);
+    }
+
+    private List<RentalContract> getRentalContractListFromSearch() {
+        System.out.println("What do you want to search by?");
+        System.out.println("1. Renter");
+        System.out.println("2. Date range");
+
+        List<RentalContract> rentalContractMatches = new ArrayList<>();
+
+        int userSelection = Utils.getIntInput("Enter the number of your choice: ", "Invalid selection", 1, 2);
+        switch (userSelection) {
+            case 1:
+                Renter renter = getRenterFromSearch();
+                // TODO properly handle renter not existing, method still returning empty list from no search.
+                if (renter == null) {
+                    System.out.println("Renter not found in system");
+                    break;
+                }
+                RentalContract rentalContractByRenter = honoluluCarRentalService.getRentalContractByRenter(renter);
+                if (rentalContractByRenter != null) {
+                    rentalContractMatches.add(rentalContractByRenter);
+                }
+                break;
+            case 2:
+                System.out.println("Enter start date for range");
+                LocalDate fromDate = Utils.getLocalDateInput();
+                System.out.println("Enter end date for range");
+                LocalDate endDate = Utils.getLocalDateInput();
+                List<RentalContract> rentalContractByDateRange = honoluluCarRentalService.getRentalContractByDateRange(fromDate, endDate);
+                if (rentalContractByDateRange != null) {
+                    rentalContractMatches.addAll(rentalContractByDateRange);
+                }
+                break;
+            default:
+                break;
+        }
+        return rentalContractMatches;
     }
     //</editor-fold>
 }

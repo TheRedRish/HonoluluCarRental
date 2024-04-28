@@ -106,8 +106,8 @@ public class HonoluluCarRentalService {
         return rentalContractRepository.getRentalContractByRenter(renter);
     }
 
-    public List<RentalContract> getRentalContractByDateRange(LocalDate startDate, LocalDate endDate) {
-        return rentalContractRepository.getRentalContractByDateRange(startDate, endDate);
+    public List<RentalContract> getRentalContractByDateRange(LocalDate fromDate, LocalDate endDate) {
+        return rentalContractRepository.getRentalContractByDateRange(fromDate, endDate);
     }
 
     public void updateRentalContract(RentalContract updatedRentalContract) {

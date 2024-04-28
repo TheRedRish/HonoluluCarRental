@@ -177,7 +177,7 @@ public class DBRenterRepository implements IRenterRepository {
         String email = resultSet.getString("email");
 
         // TODO ask if this can be done smortere
-        // It will always return true to driversLicenceNumber, but that might be a query problem.
+        // Looking for a column name seems like a bad way to detect the subclass
         // Column name from PrivateRenter or column name from CompanyRenter
         if (resultSetContainsColumn(resultSet, "driversLicenceNumber")) {
             String driversLicenceNumber = resultSet.getString("driversLicenceNumber");

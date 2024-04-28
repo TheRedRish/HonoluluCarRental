@@ -108,7 +108,7 @@ public class Utils {
                 System.out.print(promptMessage);
                 userInput = Integer.parseInt(scanner.nextLine());
                 validInput = true;
-                if (userInput > maxNum && userInput < minNum) {
+                if (minNum < maxNum && (userInput > maxNum || userInput < minNum)) {
                     System.out.println(errorMessage);
                     validInput = false;
                 }
