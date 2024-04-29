@@ -1,7 +1,4 @@
-import enums.CarBrand;
-import enums.FuelType;
-import enums.GearType;
-import enums.SeatType;
+import utils.Utils;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -76,6 +73,7 @@ public class DBRenterRepository implements IRenterRepository {
     @Override
     public List<Renter> getRentersByName(String name) {
         List<Renter> renterList = new ArrayList<>();
+        // TODO Update queries to do loose search, containing name
         try (CallableStatement statement = connection.prepareCall("{CALL getRenterByName(?)}")) {
             statement.setString(1, name);
             ResultSet resultSet = statement.executeQuery();

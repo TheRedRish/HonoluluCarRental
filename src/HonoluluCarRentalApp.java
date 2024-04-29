@@ -29,11 +29,14 @@ public class HonoluluCarRentalApp {
         }
 
         // Service
-        HonoluluCarRentalService honoluluCarRentalService = new HonoluluCarRentalService(carRepository, renterRepository, rentalContractRepository);
-
+        CarService carService = new CarService(carRepository);
+        RenterService renterService = new RenterService(renterRepository);
+        RentalContractService rentalContractService = new RentalContractService(rentalContractRepository);
         // UI
-        IHonoluluCarRentalUI honoluluCarRentalUI = new ConsoleHonoluluCarRentalUI(honoluluCarRentalService);
+        ConsoleCarUI carUI = new ConsoleCarUI(carService);
+        ConsoleRenterUI renterUI = new ConsoleRenterUI(renterService);
+        ConsoleRentalContractUI rentalContractUI = new ConsoleRentalContractUI(rentalContractService, carUI,renterUI);
+        IHonoluluCarRentalUI honoluluCarRentalUI = new ConsoleHonoluluCarRentalUI(carUI,renterUI,rentalContractUI);
         honoluluCarRentalUI.run();
-
     }
 }
