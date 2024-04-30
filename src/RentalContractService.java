@@ -18,8 +18,8 @@ public class RentalContractService {
         return rentalContractRepository.getAllRentalContracts();
     }
 
-    public RentalContract getRentalContractByRenter(Renter renter) {
-        return rentalContractRepository.getRentalContractByRenter(renter);
+    public List<RentalContract> getRentalContractsByRenter(Renter renter) {
+        return rentalContractRepository.getRentalContractsByRenter(renter);
     }
 
     public List<RentalContract> getRentalContractByDateRange(LocalDate fromDate, LocalDate endDate) {

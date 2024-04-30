@@ -35,7 +35,7 @@ public class HonoluluCarRentalApp {
         // UI
         ConsoleCarUI carUI = new ConsoleCarUI(carService);
         ConsoleRenterUI renterUI = new ConsoleRenterUI(renterService);
-        ConsoleRentalContractUI rentalContractUI = new ConsoleRentalContractUI(rentalContractService, carUI,renterUI);
+        ConsoleRentalContractUI rentalContractUI = new ConsoleRentalContractUI(rentalContractService, carService, carUI,renterUI);
         IHonoluluCarRentalUI honoluluCarRentalUI = new ConsoleHonoluluCarRentalUI(carUI,renterUI,rentalContractUI);
         honoluluCarRentalUI.run();
     }

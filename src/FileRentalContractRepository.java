@@ -58,14 +58,15 @@ public class FileRentalContractRepository implements IRentalContractRepository {
     }
 
     @Override
-    public RentalContract getRentalContractByRenter(Renter renter) {
+    public List<RentalContract> getRentalContractsByRenter(Renter renter) {
         List<RentalContract> allRentalContracts = getAllRentalContracts();
+        List<RentalContract> rentalContractList = new ArrayList<>();
         for (RentalContract rentalContract : allRentalContracts) {
-            if (rentalContract.getRenter().equals(renter)) {
-                return rentalContract;
+            if (rentalContract.getRenter().getId().equals(renter.getId())) {
+                rentalContractList.add(rentalContract);
             }
         }
-        return null;
+        return rentalContractList;
     }
 
     @Override
