@@ -4,26 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Car repository done and renter ui and repository done">
-      <change afterPath="$PROJECT_DIR$/src/enums/SeatType.java" afterDir="false" />
+    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Small changes">
+      <change afterPath="$PROJECT_DIR$/src/CarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConsoleCarUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConsoleRentalContractUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConsoleRenterUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ICarUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IRentalContractUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IRenterUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RentalContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RenterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileRentalContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileRenterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ConsoleMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBCarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBRentalContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBRenterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ICarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ICarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IRentalContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IRenterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivateRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateRenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/CarType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/CarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositoryFiles/carRepository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositoryFiles/carRepository.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +33,34 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="car-repository" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TheRedRish&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TheRedRish/HonoluluCarRental.git&quot;,
+    &quot;accountId&quot;: &quot;0657a3d3-e67f-417f-a83f-7b50de433fd8&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -57,16 +73,30 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HonoluluCarRentalApp.executor": "Run",
+    "Application.HonoluluCarRentalApp.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Rental-Contract-setup",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "database-connection",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "last_opened_file_path": "C:/Users/rune/OneDrive - Københavns Erhvervsakademi/KEA/Programmering/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -86,8 +116,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -99,6 +129,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713867184171</updated>
+      <workItem from="1714031298964" duration="9604000" />
+      <workItem from="1714127761601" duration="9786000" />
     </task>
     <task id="LOCAL-00001" summary="Car console UI updated">
       <option name="closed" value="true" />
@@ -127,10 +159,29 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Car console UI updated" />
     <MESSAGE value="Added unversioned files" />
     <MESSAGE value="Start to repository" />
     <option name="LAST_COMMIT_MESSAGE" value="Start to repository" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DBRentalContractRepository.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DBRentalContractRepository.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

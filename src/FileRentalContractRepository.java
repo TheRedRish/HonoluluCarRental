@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class FileRentalContractRepository implements IRentalContractRepository{
-    private static final String FILE_PATH = "src/repositoryFiles/renterRepository.txt";
+public class FileRentalContractRepository implements IRentalContractRepository {
+    private static final String FILE_PATH = "src/repositoryFiles/rentalContractRepository.txt";
     private static final String argSeparator = "//##//";
     private final IRenterRepository renterRepository;
     private final ICarRepository carRepository;
@@ -17,6 +17,7 @@ public class FileRentalContractRepository implements IRentalContractRepository{
         this.renterRepository = renterRepository;
         this.carRepository = carRepository;
     }
+
     @Override
     public void addRentalContract(RentalContract rentalContract) {
         try (FileWriter writer = new FileWriter(FILE_PATH, true)) {
@@ -40,15 +41,15 @@ public class FileRentalContractRepository implements IRentalContractRepository{
                 // Order of parts seen in Renter class and subclasses in getConsoleSaveString method
                 UUID id = UUID.fromString(parts[0]);
                 UUID renterId = UUID.fromString(parts[1]);
-                LocalDate fromDate = LocalDate.parse(parts[2]);
-                LocalDate toDate = LocalDate.parse(parts[3]);
-                int zipCode = Integer.parseInt(parts[4]);
-                UUID carId = UUID.fromString(parts[5]);
+                UUID carId = UUID.fromString(parts[2]);
+                LocalDate fromDate = LocalDate.parse(parts[3]);
+                LocalDate toDate = LocalDate.parse(parts[4]);
+                int zipCode = Integer.parseInt(parts[5]);
 
                 Renter renter = renterRepository.getRenterById(renterId);
                 Car car = carRepository.getCarById(carId);
 
-                rentalContractList.add(new RentalContract(id,renter,fromDate,toDate,zipCode,car));
+                rentalContractList.add(new RentalContract(id, renter, car, fromDate, toDate, zipCode));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,12 +80,12 @@ public class FileRentalContractRepository implements IRentalContractRepository{
     }
 
     @Override
-    public List<RentalContract> getRentalContractByDateRange(LocalDate startDate, LocalDate endDate) {
+    public List<RentalContract> getRentalContractByDateRange(LocalDate fromDate, LocalDate endDate) {
         List<RentalContract> allRentalContracts = getAllRentalContracts();
         List<RentalContract> rentalContractMatches = new ArrayList<>();
         for (RentalContract rentalContract : allRentalContracts) {
             // Check if toDate or fromDate is in the range. So the rental is ongoing in the range
-            if ((rentalContract.getFromDate().isAfter(startDate) && rentalContract.getFromDate().isBefore(endDate)) || (rentalContract.getToDate().isAfter(startDate) && rentalContract.getToDate().isBefore(endDate))) {
+            if ((rentalContract.getFromDate().isAfter(fromDate) && rentalContract.getFromDate().isBefore(endDate)) || (rentalContract.getToDate().isAfter(fromDate) && rentalContract.getToDate().isBefore(endDate))) {
                 rentalContractMatches.add(rentalContract);
             }
         }
@@ -119,7 +120,7 @@ public class FileRentalContractRepository implements IRentalContractRepository{
         }
     }
 
-    private void saveAllRentalContracts(List<RentalContract> rentalContractList){
+    private void saveAllRentalContracts(List<RentalContract> rentalContractList) {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
             for (RentalContract rentalContract : rentalContractList) {
                 writer.write(rentalContract.getConsoleSaveString(argSeparator) + "\n");

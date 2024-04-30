@@ -1,7 +1,11 @@
+package utils;
+
+import java.nio.ByteBuffer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class Utils {
@@ -88,12 +92,13 @@ public class Utils {
 
     /**
      * Get an integer input from the user within a specified range.
+     * Ignores range if maxNum is smaller than minNum
      *
      * @param promptMessage The message prompt displayed to the user.
      * @param errorMessage  The error message displayed if the input is invalid.
      * @param minNum        The minimum value of the range.
      * @param maxNum        The maximum value of the range.
-     * @return The integer input by the user.
+     * @return The integer input by the user. Ignores range if minNum > maxNum
      */
     public static int getIntInput(String promptMessage, String errorMessage, int minNum, int maxNum) {
         Scanner scanner = new Scanner(System.in);
@@ -105,7 +110,7 @@ public class Utils {
                 System.out.print(promptMessage);
                 userInput = Integer.parseInt(scanner.nextLine());
                 validInput = true;
-                if (userInput > maxNum && userInput < minNum) {
+                if (minNum < maxNum && (userInput > maxNum || userInput < minNum)) {
                     System.out.println(errorMessage);
                     validInput = false;
                 }
@@ -382,6 +387,9 @@ public class Utils {
      * @return The selected object.
      */
     public static <T> T selectObject(List<T> objects) {
+        if (objects.isEmpty()){
+            return null;
+        }
         // Print the list of objects with numbers
         for (int i = 0; i < objects.size(); i++) {
             System.out.println("--------------------------------------");
@@ -452,6 +460,25 @@ public class Utils {
             }
         } while (date == null);
         return date;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="bytes">
+    /**
+     * Converts a byte array to a UUID.
+     *
+     * @param bytes the byte array representing the UUID
+     * @return the UUID object created from the byte array
+     * @throws IllegalArgumentException if the byte array is null or has an invalid length
+     */
+    public static UUID convertBytesToUUID(byte[] bytes) {
+        if (bytes == null || bytes.length != 16) {
+            throw new IllegalArgumentException("Invalid byte array for UUID");
+        }
+        ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
+        long mostSignificantBits = byteBuffer.getLong();
+        long leastSignificantBits = byteBuffer.getLong();
+        return new UUID(mostSignificantBits, leastSignificantBits);
     }
     //</editor-fold>
 }
