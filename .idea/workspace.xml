@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Car repository done and renter ui and repository done">
+    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Added hello&quot;">
       <change beforePath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,13 +106,22 @@
       <option name="project" value="LOCAL" />
       <updated>1713906357958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added hello&quot;">
+      <option name="closed" value="true" />
+      <created>1715671657526</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715671657526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Car console UI updated" />
     <MESSAGE value="Added unversioned files" />
     <MESSAGE value="Start to repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start to repository" />
+    <MESSAGE value="Added hello&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hello&quot;" />
   </component>
 </project>

@@ -34,6 +34,7 @@ public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {
     public void displayCarMenu() {
         ConsoleMenu carMenu = new ConsoleMenu();
         System.out.println("hello");
+        System.out.println("world");
         carMenu.addItem("Add car", this::displayAddCar);
         carMenu.addItem("Search cars", this::displaySearchCars);
         carMenu.addItem("Update car", this::displayUpdateCar);
