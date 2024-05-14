@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Car repository done and renter ui and repository done">
-      <change afterPath="$PROJECT_DIR$/src/enums/SeatType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileRentalContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileRenterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ICarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ICarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IRentalContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IRenterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivateRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateRenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/CarType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/CarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositoryFiles/carRepository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositoryFiles/carRepository.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Rental-Contract-setup",
+    "git-widget-placeholder": "1__Demobranch",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
