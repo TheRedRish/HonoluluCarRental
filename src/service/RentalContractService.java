@@ -1,3 +1,9 @@
+package service;
+
+import entity.RentalContract;
+import entity.Renter;
+import repository.IRentalContractRepository;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;

@@ -1,15 +1,21 @@
+import service.CarService;
+import repository.*;
+import service.RentalContractService;
+import service.RenterService;
+import view.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class HonoluluCarRentalApp {
-    // TODO Add package structure
     public static void main(String[] args) {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/honolulucarrental", "root", "74trEgem");
         } catch (SQLException e) {
             System.out.println("Unable to connect to database");
+            System.out.println(e.getMessage());
             // TODO add logging system
         }
 
@@ -18,6 +24,7 @@ public class HonoluluCarRentalApp {
         IRenterRepository renterRepository;
         IRentalContractRepository rentalContractRepository;
         if (connection != null) {
+            System.out.println("Started program with connection to DB");
             renterRepository = new DBRenterRepository(connection);
             carRepository = new DBCarRepository(connection);
             rentalContractRepository = new DBRentalContractRepository(connection, renterRepository, carRepository);

@@ -1,3 +1,9 @@
+package repository;
+
+import entity.CompanyRenter;
+import entity.PrivateRenter;
+import entity.Renter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +14,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class FileRenterRepository implements IRenterRepository {
-    private static final String FILE_PATH = "src/repositoryFiles/renterRepository.txt";
+    private static final String FILE_PATH = "src/repository.repositoryFiles/renterRepository.txt";
     private static final String argSeparator = "//##//";
 
     public FileRenterRepository() {

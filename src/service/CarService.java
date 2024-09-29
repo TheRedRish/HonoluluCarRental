@@ -1,5 +1,9 @@
+package service;
+
+import entity.Car;
 import enums.CarBrand;
 import enums.FuelType;
+import repository.ICarRepository;
 
 import java.time.LocalDate;
 import java.util.List;

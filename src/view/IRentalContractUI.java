@@ -1,3 +1,5 @@
+package view;
+
 public interface IRentalContractUI {
     //<editor-fold desc="rental contract">
     void displayRentalContractMenu();

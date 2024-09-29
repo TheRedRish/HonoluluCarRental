@@ -1,3 +1,7 @@
+package repository;
+
+import entity.Renter;
+
 import java.util.List;
 import java.util.UUID;
 

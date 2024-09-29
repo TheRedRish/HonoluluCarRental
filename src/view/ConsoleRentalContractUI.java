@@ -1,3 +1,10 @@
+package view;
+
+import entity.Car;
+import service.CarService;
+import entity.RentalContract;
+import entity.Renter;
+import service.RentalContractService;
 import utils.ConsoleMenu;
 import utils.Utils;
 

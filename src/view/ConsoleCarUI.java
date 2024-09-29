@@ -1,3 +1,7 @@
+package view;
+
+import entity.Car;
+import service.CarService;
 import enums.CarBrand;
 import enums.FuelType;
 import enums.GearType;

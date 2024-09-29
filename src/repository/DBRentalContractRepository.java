@@ -1,3 +1,8 @@
+package repository;
+
+import entity.Car;
+import entity.RentalContract;
+import entity.Renter;
 import utils.Utils;
 
 import java.sql.*;

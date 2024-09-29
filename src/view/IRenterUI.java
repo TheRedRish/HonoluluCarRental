@@ -1,3 +1,5 @@
+package view;
+
 public interface IRenterUI {
     //<editor-fold desc="renter">
     void displayRenterMenu();

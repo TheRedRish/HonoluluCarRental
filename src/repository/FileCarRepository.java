@@ -1,3 +1,6 @@
+package repository;
+
+import entity.Car;
 import enums.CarBrand;
 import enums.FuelType;
 import enums.GearType;
@@ -13,7 +16,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class FileCarRepository implements ICarRepository {
-    private static final String FILE_PATH = "src/repositoryFiles/carRepository.txt";
+    private static final String FILE_PATH = "src/repository.repositoryFiles/carRepository.txt";
     private static final String argSeparator = "//##//";
 
     public FileCarRepository() {

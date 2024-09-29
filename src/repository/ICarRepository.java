@@ -1,7 +1,9 @@
+package repository;
+
+import entity.Car;
 import enums.CarBrand;
 import enums.FuelType;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
