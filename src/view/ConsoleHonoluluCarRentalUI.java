@@ -1,3 +1,5 @@
+package view;
+
 import utils.ConsoleMenu;
 
 public class ConsoleHonoluluCarRentalUI implements IHonoluluCarRentalUI {

@@ -1,3 +1,8 @@
+package repository;
+
+import entity.Car;
+import entity.RentalContract;
+import entity.Renter;
 import utils.Utils;
 
 import java.sql.*;
@@ -48,22 +53,22 @@ public class DBRentalContractRepository implements IRentalContractRepository {
     }
 
     @Override
-    public RentalContract getRentalContractByRenter(Renter renter) {
-        RentalContract rentalContract = null;
+    public List<RentalContract> getRentalContractsByRenter(Renter renter) {
+        List<RentalContract> rentalContractList = new ArrayList<>();
         try (CallableStatement statement = connection.prepareCall("{CALL getRentalContractByRenter(?)}")) {
             statement.setString(1, renter.getId().toString());
             ResultSet resultSet = statement.executeQuery();
             // No rows because no result.
             if (!resultSet.isBeforeFirst()) {
-                return rentalContract;
+                return rentalContractList;
             }
             while (resultSet.next()) {
-                rentalContract = mapResultSetToRentalContract(resultSet);
+                rentalContractList.add(mapResultSetToRentalContract(resultSet));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return rentalContract;
+        return rentalContractList;
     }
 
     @Override

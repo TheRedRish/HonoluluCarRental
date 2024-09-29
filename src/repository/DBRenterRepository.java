@@ -1,3 +1,8 @@
+package repository;
+
+import entity.CompanyRenter;
+import entity.PrivateRenter;
+import entity.Renter;
 import utils.Utils;
 
 import java.sql.*;

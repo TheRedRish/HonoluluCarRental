@@ -1,3 +1,9 @@
+package repository;
+
+import entity.Car;
+import entity.RentalContract;
+import entity.Renter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +14,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class FileRentalContractRepository implements IRentalContractRepository {
-    private static final String FILE_PATH = "src/repositoryFiles/rentalContractRepository.txt";
+    private static final String FILE_PATH = "src/repository.repositoryFiles/rentalContractRepository.txt";
     private static final String argSeparator = "//##//";
     private final IRenterRepository renterRepository;
     private final ICarRepository carRepository;
@@ -58,14 +64,15 @@ public class FileRentalContractRepository implements IRentalContractRepository {
     }
 
     @Override
-    public RentalContract getRentalContractByRenter(Renter renter) {
+    public List<RentalContract> getRentalContractsByRenter(Renter renter) {
         List<RentalContract> allRentalContracts = getAllRentalContracts();
+        List<RentalContract> rentalContractList = new ArrayList<>();
         for (RentalContract rentalContract : allRentalContracts) {
-            if (rentalContract.getRenter().equals(renter)) {
-                return rentalContract;
+            if (rentalContract.getRenter().getId().equals(renter.getId())) {
+                rentalContractList.add(rentalContract);
             }
         }
-        return null;
+        return rentalContractList;
     }
 
     @Override

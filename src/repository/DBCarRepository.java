@@ -1,3 +1,6 @@
+package repository;
+
+import entity.Car;
 import enums.*;
 import utils.Utils;
 

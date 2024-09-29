@@ -1,3 +1,9 @@
+package view;
+
+import entity.CompanyRenter;
+import entity.PrivateRenter;
+import entity.Renter;
+import service.RenterService;
 import utils.ConsoleMenu;
 import utils.Utils;
 

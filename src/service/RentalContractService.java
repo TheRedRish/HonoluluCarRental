@@ -1,3 +1,9 @@
+package service;
+
+import entity.RentalContract;
+import entity.Renter;
+import repository.IRentalContractRepository;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
@@ -18,8 +24,8 @@ public class RentalContractService {
         return rentalContractRepository.getAllRentalContracts();
     }
 
-    public RentalContract getRentalContractByRenter(Renter renter) {
-        return rentalContractRepository.getRentalContractByRenter(renter);
+    public List<RentalContract> getRentalContractsByRenter(Renter renter) {
+        return rentalContractRepository.getRentalContractsByRenter(renter);
     }
 
     public List<RentalContract> getRentalContractByDateRange(LocalDate fromDate, LocalDate endDate) {

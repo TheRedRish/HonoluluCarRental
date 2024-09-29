@@ -1,3 +1,5 @@
+package view;
+
 public interface ICarUI {
     //<editor-fold desc="Car">
     void displayCarMenu();

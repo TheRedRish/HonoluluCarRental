@@ -4,26 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Small changes">
-      <change afterPath="$PROJECT_DIR$/src/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsoleCarUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsoleRentalContractUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsoleRenterUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ICarUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IRentalContractUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IRenterUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RentalContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenterService.java" afterDir="false" />
+    <list default="true" id="0299caaa-f4bc-4145-93e6-64384b0f889a" name="Changes" comment="Updated search by rentalContract and addRentalContract to only show cars not already rented in date range.">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ConsoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBCarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBRentalContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBRenterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HonoluluCarRental.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HonoluluCarRental.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompanyRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/CompanyRenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleCarUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleCarUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleHonoluluCarRentalUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleRentalContractUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleRentalContractUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleRenterUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleRenterUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/DBCarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/DBRentalContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/DBRenterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/FileCarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/FileRentalContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/FileRenterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HonoluluCarRentalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HonoluluCarRentalService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ICarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/ICarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ICarUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ICarUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IHonoluluCarRentalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IHonoluluCarRentalUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IRentalContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRentalContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IRentalContractUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IRentalContractUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IRenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRenterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IRenterUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IRenterUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PrivateRenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RentalContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/RentalContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RentalContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RentalContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Renter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RenterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositoryFiles/carRepository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repositoryFiles/carRepository.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositoryFiles/rentalContractRepository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repositoryFiles/rentalContractRepository.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositoryFiles/renterRepository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repositoryFiles/renterRepository.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="car-repository" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +66,12 @@
     &quot;assignee&quot;: &quot;TheRedRish&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TheRedRish/HonoluluCarRental.git&quot;,
-    &quot;accountId&quot;: &quot;0657a3d3-e67f-417f-a83f-7b50de433fd8&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TheRedRish/HonoluluCarRental.git",
+    "accountId": "2e1bbefb-754d-4aaa-a1ab-5129b480b208"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -73,14 +86,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HonoluluCarRentalApp.executor": "Debug",
+    "Application.HonoluluCarRentalApp.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "database-connection",
+    "git-widget-placeholder": "UI-updates",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rune/OneDrive - Københavns Erhvervsakademi/KEA/Programmering/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar",
+    "last_opened_file_path": "C:/Users/rune/OneDrive - Københavns Erhvervsakademi/KEA/1 semester/Programmering/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,6 +112,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="repository" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="HonoluluCarRentalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HonoluluCarRentalApp" />
@@ -110,14 +128,15 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HonoluluCarRentalApp" />
+        <item itemvalue="Application.HonoluluCarRentalApp" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -131,6 +150,8 @@
       <updated>1713867184171</updated>
       <workItem from="1714031298964" duration="9604000" />
       <workItem from="1714127761601" duration="9786000" />
+      <workItem from="1715098356081" duration="38000" />
+      <workItem from="1727610779490" duration="3446000" />
     </task>
     <task id="LOCAL-00001" summary="Car console UI updated">
       <option name="closed" value="true" />
@@ -156,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713906357958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated search by rentalContract and addRentalContract to only show cars not already rented in date range.">
+      <option name="closed" value="true" />
+      <created>1714470432977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714470432977</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,22 +195,7 @@
     <MESSAGE value="Car console UI updated" />
     <MESSAGE value="Added unversioned files" />
     <MESSAGE value="Start to repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start to repository" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBRentalContractRepository.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBRentalContractRepository.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Updated search by rentalContract and addRentalContract to only show cars not already rented in date range." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated search by rentalContract and addRentalContract to only show cars not already rented in date range." />
   </component>
 </project>
